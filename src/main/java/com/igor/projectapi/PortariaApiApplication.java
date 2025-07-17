@@ -1,4 +1,4 @@
-package com.example.portariaapi;
+package com.igor.projectapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
