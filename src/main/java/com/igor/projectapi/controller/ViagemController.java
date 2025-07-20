@@ -1,6 +1,7 @@
 package com.igor.projectapi.controller;
 
 import com.igor.projectapi.entity.*;
+import com.igor.projectapi.repository.FuncionarioRepository;
 import com.igor.projectapi.service.ViagemService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class ViagemController {
 
     @Autowired
     private ViagemService viagemService;
+
+    @Autowired
+    private FuncionarioRepository funcionarioRepository;
 
     @PostMapping("/saida")
     public void registrarSaida(@RequestBody SaidaRequest req) {
@@ -35,5 +39,8 @@ public class ViagemController {
         return viagemService.listarHistorico();
     }
 
-
+    @GetMapping("/funcionarios")
+    public List<Funcionario> listarFuncionarios() {
+        return funcionarioRepository.findAll();
+    }
 }
