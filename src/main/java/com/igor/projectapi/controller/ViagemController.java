@@ -39,7 +39,6 @@ public class ViagemController {
         return viagemService.listarHistorico();
     }
 
-    // 🔄 NOVO: listar todos os motoristas cadastrados
     @GetMapping("/funcionarios")
     public List<Funcionario> listarFuncionarios() {
         return funcionarioRepository.findAll();

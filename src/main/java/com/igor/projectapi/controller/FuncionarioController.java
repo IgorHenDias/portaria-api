@@ -16,7 +16,7 @@ public class FuncionarioController {
     private FuncionarioRepository funcionarioRepository;
 
     @PostMapping
-    public Funcionario cadastraarFuncionario(@RequestBody Funcionario funcionario){
+    public Funcionario cadastraarFuncionario(@RequestBody Funcionario funcionario) {
         return funcionarioRepository.save(funcionario);
     }
 }

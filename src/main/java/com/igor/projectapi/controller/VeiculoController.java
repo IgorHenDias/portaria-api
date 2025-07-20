@@ -13,7 +13,7 @@ public class VeiculoController {
     private VeiculoRepository veiculoRepository;
 
     @PostMapping
-    public Veiculo cadastrarVeiculo(@RequestBody Veiculo veiculo){
+    public Veiculo cadastrarVeiculo(@RequestBody Veiculo veiculo) {
         return veiculoRepository.save(veiculo);
     }
 }
