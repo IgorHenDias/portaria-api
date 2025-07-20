@@ -1,85 +1,70 @@
-# Portaria API - Backend em Spring Boot
+# 🛡️ Portaria API - Backend
 
-API REST desenvolvida como parte de um desafio técnico para controle de entrada e saída de veículos em uma empresa.
+Projeto desenvolvido para controle de entrada e saída de veículos de uma portaria, com integração a um app Flutter.
 
----
-
-## Tecnologias Utilizadas
+## 🧱 Tecnologias utilizadas
 
 - Java 17
 - Spring Boot
+- H2 Database (em memória)
 - Spring Data JPA
-- H2 Database
-- Maven
 - Lombok
+- Maven
 
 ---
 
-## Como Rodar o Projeto Localmente
+## 🚀 Como executar
 
-1. Clone o repositório:
-
-git clone https://github.com/igorhdias/portaria-api.git
-cd portaria-api
-
-2. Rode o projeto com Spring Boot:
-
-./mvnw spring-boot:run
-
-3. Acesse o H2 Console:
-
-- URL: http://localhost:8081/h2-console
-- JDBC URL: jdbc:h2:mem:testdb
-- Usuário: sa
-- Senha: (vazio)
+1. Clone o repositório
+2. Abra o projeto no IntelliJ ou VS Code
+3. Execute `PortariaApplication.java`
+4. Acesse o H2 console em: `http://localhost:8081/h2-console`
+  - JDBC URL: `jdbc:h2:mem:testdb`
+  - User: `sa`
 
 ---
 
-## Endpoints da API
+## 🔌 Endpoints disponíveis
 
-### Registrar Saída
-POST /viagens/saida
-{
-  "placaVeiculo": "BRA-2025",
-  "idMotorista": 1,
-  "destino": "Centro de Distribuição",
-  "passageiros": "João, Maria"
-}
+### 📤 POST /viagens/saida
+Registra a saída de um veículo.
 
-### Registrar Retorno
-POST /viagens/retorno
-{
-  "placaVeiculo": "BRA-2025"
-}
+### 📥 POST /viagens/retorno
+Registra o retorno de um veículo.
 
-### Listar Veículos por Status
-GET /viagens/veiculos?status=NO_PATIO  
-GET /viagens/veiculos?status=EM_VIAGEM
+### 📋 GET /viagens/veiculos?status=NO_PATIO|EM_VIAGEM
+Lista os veículos por status.
 
-### Histórico de Viagens
-GET /viagens/registros
+### 📚 GET /viagens/registros
+Lista o histórico completo de viagens.
+
+### 👤 GET /viagens/funcionarios
+Lista todos os motoristas cadastrados.
 
 ---
 
-## Cadastro de Veículo e Funcionário
+## 📲 Integração com Flutter
 
-### Criar Veículo
-POST /veiculos
-{
-  "placa": "BRA-2025",
-  "modelo": "Caminhão"
-}
+O backend é consumido por um app Flutter (entregue separadamente), utilizando os endpoints acima.
 
-### Criar Funcionário
-POST /funcionarios
-{
-  "nome": "João da Silva",
-  "cnh": "12345678900"
-}
+- Exibe veículos no pátio
+- Permite registrar saídas e retornos
+- Permite cadastrar veículos e funcionários
+- Dropdown dinâmico de motoristas no app
 
 ---
 
-## Autor
+## ✅ Status da entrega
+
+- [x] Backend completo e funcional
+- [x] Banco em memória (H2) com console ativo
+- [x] Endpoints testados com Postman
+- [x] Integração com frontend funcionando
+- [x] README atualizado (20/07/2025)
+
+---
+
+## 👨‍💻 Desenvolvido por
 
 Igor Henrique Dias  
-LinkedIn: https://linkedin.com/in/igorhdias
+[LinkedIn](https://www.linkedin.com/in/igorhdias)
